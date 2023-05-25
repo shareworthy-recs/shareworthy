@@ -2,13 +2,15 @@ import express from 'express';
 import dotenv from 'dotenv';
 import path from 'path';
 import { NextFunction, Response, Request } from 'express';
+import cors from 'cors';
+
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.resolve(__dirname, '../client')));
-
+app.use('/', express.static(path.resolve(__dirname, '../client')));
+app.use(cors());
 // catch-all route handler for any requests to an unknown route
 app.use((req: Request, res: Response) =>
   res.status(404).send('Page not found, please check your URL endpoints!')
