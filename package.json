@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "nodemon server/server.ts",
     "start:dev": "nodemon server/server.ts && webpack serve"
   },
   "keywords": [],
@@ -14,11 +15,13 @@
     "css-loader": "^6.7.4",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "pg": "^8.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.0",
+    "sequelize": "^6.31.1",
     "style-loader": "^3.3.3",
     "typescript": "^5.0.4",
     "webpack": "^5.83.1"
