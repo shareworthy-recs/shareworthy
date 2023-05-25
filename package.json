@@ -24,8 +24,7 @@
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.0",
-    "style-loader": "^3.3.3",
-    "typescript": "^5.0.4"
+    "style-loader": "^3.3.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.0",
@@ -48,6 +47,7 @@
     "url-loader": "^4.1.1",
     "webpack": "^5.83.1",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "typescript": "^5.0.4"
   }
 }

@@ -1,9 +1,6 @@
 import React from 'react';
-
 const UsersSuggestion = () => {
-  return (
-    
-  )
-}
+  return;
+};
 
 export default UsersSuggestion;
