@@ -16,7 +16,7 @@ const Login = () => {
           </div>
         </form>
         <div>
-          <button>Continue with Google</button>
+          <button>Sign in with Google</button>
         </div>
         <div>
           <button>Sign in with Github</button>
