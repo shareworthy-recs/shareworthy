@@ -1,0 +1,8 @@
+$testColor: red;
+$textMain: blue;
+
+body, #root {
+    background-color: $testColor;
+    color: $textMain;
+    font-size: 40px;
+}
