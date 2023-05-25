@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "nodemon server/server.ts",
     "start:dev": "concurrently \"nodemon server/server.ts\" \"webpack-dev-server --config webpack.config.js --progress --color\"",
     "build": "webpack --config webpack.config.js --progress --color"
   },
@@ -18,11 +19,13 @@
     "express": "^4.18.2",
     "html-webpack-plugin": "^5.5.0",
     "path": "^0.12.7",
+    "pg": "^8.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.0",
+    "sequelize": "^6.31.1",
     "style-loader": "^3.3.3",
     "typescript": "^5.0.4"
   },
