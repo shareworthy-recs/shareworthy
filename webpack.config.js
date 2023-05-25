@@ -7,6 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
   },
   target: 'web',
   devServer: {
@@ -14,7 +15,7 @@ module.exports = {
     host: 'localhost',
     open: true,
     hot: true,
-    liveReload: true,
+    historyApiFallback: true,
     proxy: {
       '/': {
         target: 'http://localhost:3000',

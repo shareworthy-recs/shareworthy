@@ -1,8 +1,10 @@
 $testColor: red;
-$textMain: blue;
+$mainBgColor: rgb(181, 214, 181);;
+$textMain: rgb(39, 150, 175);
 
-body, #root {
-    background-color: $testColor;
-    color: $textMain;
-    font-size: 40px;
+body,
+#root {
+  background-color: $mainBgColor;
+  color: $textMain;
+  font-size: 40px;
 }
