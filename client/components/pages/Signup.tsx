@@ -1,5 +1,7 @@
 import React from 'react';
 
+
+
 const Signup = () => {
   return (
     <>
@@ -20,7 +22,7 @@ const Signup = () => {
           <button>Continue with Google</button>
         </div>
         <div>
-          <button>Continue with Google</button>
+          <button>Continue with Github</button>
         </div>
         <div>
           <p>Already on Shareworthy? <a href="/Login">Sign in</a></p>
