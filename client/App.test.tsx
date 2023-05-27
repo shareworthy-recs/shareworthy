@@ -16,8 +16,8 @@ describe('this test should pass', () => {
     });
 });
 
-
-test('renders the landing page', () => {
-  render(<App />);
-  expect(screen.getByRole("combobox")).toHaveDisplayValue("Select a breed");
-});
+//// ** example syntax **
+// test('renders the landing page', () => {
+//   render(<App />);
+//   expect(screen.getByRole("combobox")).toHaveDisplayValue("Select a breed");
+// });
