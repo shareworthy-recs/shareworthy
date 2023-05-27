@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import { sequelize } from '../config/db';
 import Users from "./usersModel";
-import Categories from "./categoryModels";
+import Categories from "./categoriesModel";
 
 const Questions = sequelize.define("questions", {
     id: {
@@ -15,7 +15,7 @@ const Questions = sequelize.define("questions", {
         allowNull: false,
         references: {
             model: Users,
-            key: 'user_id'
+            key: 'id'
         }
     },
     question: {

@@ -2,7 +2,7 @@ import { DataTypes } from "sequelize";
 import { sequelize } from '../config/db';
 import Users from "./usersModel";
 import Questions from "./questionsModel";
-import Categories from "./categoryModels";
+import Categories from "./categoriesModel";
 
 const Recommendations = sequelize.define('recommendations', {
     id: {
@@ -55,3 +55,4 @@ Recommendations.sync().then(() => {
 })
 
 export default Recommendations;
+
