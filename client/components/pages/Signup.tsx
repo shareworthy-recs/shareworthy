@@ -20,6 +20,9 @@ const Signup = () => {
           <button>Continue with Google</button>
         </div>
         <div>
+          <button>Continue with Google</button>
+        </div>
+        <div>
           <p>Already on Shareworthy? <a href="/Login">Sign in</a></p>
         </div>
       </div>
