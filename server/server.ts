@@ -4,7 +4,7 @@ import path from 'path';
 import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
-import userRouter from './routes/userRouter';
+import userRouter from './routes/usersRouter';
 import reccsRouter from './routes/reccsRouter';
 import questionsRouter from './routes/questionsRouter';
 
@@ -45,4 +45,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
 connectDB();

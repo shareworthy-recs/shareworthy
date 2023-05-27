@@ -1,10 +1,10 @@
 import express from "express";
 const router = express.Router();
-
+import usersController from '../controllers/usersController';
 
 //signup
-router.post("/signup", (req, res) => {
-  res.status(200).json(res.locals);
+router.post("/signup", usersController.signUp, (req, res) => {
+  res.status(200).send('new user created');
 });
 
 //login
