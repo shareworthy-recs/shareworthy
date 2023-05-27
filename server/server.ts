@@ -4,6 +4,9 @@ import path from 'path';
 import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
+import userRouter from './routes/userRouter';
+import reccsRouter from './routes/reccsRouter';
+import questionsRouter from './routes/questionsRouter';
 
 dotenv.config();
 const app = express();
@@ -13,6 +16,16 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.resolve(__dirname, '../client')));
 app.use(cors());
+
+//user route
+app.use("/api/user", userRouter)
+
+//recommendations route
+app.use("/api/recommendations", reccsRouter);
+
+//questions route
+app.use("/api/questions", questionsRouter);
+
 // catch-all route handler for any requests to an unknown route
 app.use((req: Request, res: Response) =>
   res.status(404).send('Page not found, please check your URL endpoints!')
