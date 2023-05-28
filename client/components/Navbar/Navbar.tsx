@@ -1,7 +1,8 @@
 import React from 'react';
-import '../styles/NavbarStyles.scss';
+import DropDownProfile from './DropDownProfile';
+import './NavbarStyles.scss';
 
-const Navbar = () => {
+const Navbar = () => {  
   return (
     <nav>
       <div id="left-nav">
@@ -11,6 +12,7 @@ const Navbar = () => {
         <div>Ask a Question?</div>
         <div>Recommend</div>
       </div>
+      <DropDownProfile/>
     </nav>
   );
 };

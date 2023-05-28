@@ -10,12 +10,12 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 //   Signup,
 // } from './components/pages';
 
-import Navbar from './components/pages/Navbar';
-import AskForSuggestion from './components/pages/AskForSuggestion';
-import Homepage from './components/pages/Homepage';
-import Login from './components/pages/Login';
-import Recommend from './components/pages/Recommend';
-import Signup from './components/pages/Signup';
+import Navbar from './components/Navbar/Navbar';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
+import Dashboard from './components/Dashboard/Dashboard';
+import AskForSuggestion from './components/AskForSuggestion/AskForSuggestion';
+import Recommend from './components/Recommend/Recommend';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/homepage" element={<Homepage />} />
+        <Route path="/homepage" element={<Dashboard />} />
         <Route path="/askforsuggestion" element={<AskForSuggestion />} />
         <Route path="/recomment" element={<Recommend />} />
       </Routes>
