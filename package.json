@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start:server": "nodemon server/server.ts",
     "test:jest": "npx jest",
     "start:dev": "concurrently \"nodemon server/server.ts\" \"webpack-dev-server --config webpack.config.js --progress --color\"",
     "build": "webpack --config webpack.config.js --progress --color"
@@ -18,12 +19,17 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "html-webpack-plugin": "^5.5.0",
+    "passport": "^0.6.0",
+    "passport-github2": "^0.1.12",
+    "passport-google-oauth20": "^2.0.0",
     "path": "^0.12.7",
+    "pg": "^8.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
     "sass": "^1.62.1",
     "sass-loader": "^13.3.0",
+    "sequelize": "^6.31.1",
     "style-loader": "^3.3.3"
   },
   "devDependencies": {
