@@ -1,3 +1,4 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@800&display=swap');
 
 nav {
@@ -5,7 +6,7 @@ nav {
   justify-content: space-between;
   list-style-type: none;
   font-family: 'Plus Jakarta Sans', sans-serif;
-  color: rgb(254, 72, 189);
+  color: $primary-text-color;
   background-color: rgb(113, 113, 213);
 
   #left-nav {
@@ -35,9 +36,4 @@ nav {
     height: 100%;
     border-radius: 20px;
   }
-}
-
-body {
-  margin: 0;
-  padding: 0;
 }

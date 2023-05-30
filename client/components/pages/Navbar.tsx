@@ -1,6 +1,7 @@
 import React from 'react';
-import '../styles/NavbarStyles.scss';
-import lily from '../../assets/Lily.jpg';
+// import '../styles/NavbarStyles.scss';
+import '../../stylesheets/components/_navbar.scss';
+import lily from '../../assets/Lily.JPG';
 import DropDownProfile from './DropDownProfile';
 
 const Navbar = () => {
