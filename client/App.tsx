@@ -16,6 +16,7 @@ import Dashboard from './components/pages/Dashboard';
 import Login from './components/pages/Login';
 import Recommend from './components/pages/Recommend';
 import Signup from './components/pages/Signup';
+import UserProfile from './components/pages/UserProfile';
 
 import './stylesheets/main.scss';
 
@@ -24,7 +25,13 @@ function App() {
   return (
     <>
       <Navbar />
-      <Dashboard />
+
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/ask" element={<AskForSuggestion />} />
+        <Route path="/recommend" element={<Recommend />} />
+        <Route path="/profile" element={<UserProfile />} />
+      </Routes>
     </>
   );
 }

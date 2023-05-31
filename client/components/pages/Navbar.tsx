@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from "react-router-dom";
 import '../../stylesheets/components/Navbar.scss';
 import lily from '../../assets/Lily.JPG';
 import DropDownProfile from './DropDownProfile';
@@ -6,17 +7,38 @@ import DropDownProfile from './DropDownProfile';
 const Navbar = () => {
   return (
     <nav>
-      <div id="left-nav">
-        <div>Shareworthy</div>
+
+{/*
+      <Routes>
+          <Route exact path="/" element={<Dashboard />} />
+
+
+*/}
+
+
+      <div id="site-name">
+        <Link to="/">
+          <h1>Shareworthy</h1>
+        </Link>
       </div>
       <div id="right-nav">
-        
-        <div>Ask a Question?</div>
 
-        <div>Recommend</div>
+        <div>
+          <Link to="/ask">
+            Ask a Question?
+          </Link>
+        </div>
+
+        <div>
+          <Link to="/recommend">
+            Recommend
+          </Link>
+        </div>
 
         <div id="user-pic">
-          <img src={lily} />
+          <Link to="/profile">
+            <img src={lily} alt="user profile" />
+          </Link>
         </div>
 
       </div>
