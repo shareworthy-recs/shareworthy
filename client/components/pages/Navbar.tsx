@@ -1,20 +1,12 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import '../../stylesheets/components/Navbar.scss';
-import lily from '../../assets/Lily.JPG';
+import lily from '../../assets/lily.jpg';
 import DropDownProfile from './DropDownProfile';
 
 const Navbar = () => {
   return (
     <nav>
-
-{/*
-      <Routes>
-          <Route exact path="/" element={<Dashboard />} />
-
-
-*/}
-
 
       <div id="site-name">
         <Link to="/">
