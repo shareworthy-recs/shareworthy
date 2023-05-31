@@ -25,16 +25,17 @@ function App() {
   return (
     <>
       <Navbar />
-
-      <Routes>
-        <Route path="/" element={<Dashboard />} />
-        <Route path="/ask" element={<AskForSuggestion />} />
-        <Route path="/recommend" element={<Recommend />} />
-        <Route path="/profile" element={<UserProfile />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<Dashboard />} />
+          <Route path="/ask" element={<AskForSuggestion />} />
+          <Route path="/recommend" element={<Recommend />} />
+          <Route path="/profile" element={<UserProfile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
     </>
   );
 }
