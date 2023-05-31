@@ -2,7 +2,6 @@ import React from 'react';
 import '../../stylesheets/components/Dashboard.scss';
 
 import AskForSuggestion from './AskForSuggestion';
-import Dashboard from './Dashboard';
 import Login from './Login';
 import Recommend from './Recommend';
 import Signup from './Signup';
