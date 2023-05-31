@@ -7,12 +7,14 @@ nav {
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: rgb(254, 72, 189);
   background-color: rgb(113, 113, 213);
+
   #left-nav {
     flex: 1;
     display: flex;
     align-items: center;
     padding: 20px;
   }
+
   #right-nav {
     flex: 1;
     display: flex;

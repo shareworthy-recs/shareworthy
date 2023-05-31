@@ -1,15 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-// import {
-//   Navbar,
-//   AskForSuggestion,
-//   Homepage,
-//   Login,
-//   Recommend,
-//   Signup,
-// } from './components/pages';
-
 import Navbar from './components/Navbar/Navbar';
 import Login from './components/Login/Login';
 import Signup from './components/Signup/Signup';
@@ -21,14 +12,18 @@ function App() {
   return (
     <BrowserRouter>
       <Navbar />
-
-      <Routes>
+      <AskForSuggestion />
+      <Dashboard />
+      <Login />
+      <Recommend />
+      <Signup />
+      {/* <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/homepage" element={<Dashboard />} />
+        <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/askforsuggestion" element={<AskForSuggestion />} />
         <Route path="/recomment" element={<Recommend />} />
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   );
 }

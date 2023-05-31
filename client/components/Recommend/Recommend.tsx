@@ -1,4 +1,10 @@
 import React from 'react';
-const Recommend = () => {};
+const Recommend = () => {
+  return (
+    <>
+      <div>Recommend</div>
+    </>
+  );
+};
 
 export default Recommend;

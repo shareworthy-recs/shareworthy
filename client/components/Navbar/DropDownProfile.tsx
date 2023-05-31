@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profile from './profile.jpg';
+import profile from '../../assets/lily.png';
 import './DropDownProfileStyles.scss';
 
 const DropDownProfile = () => {
@@ -12,6 +12,7 @@ const DropDownProfile = () => {
   return (
     <div className="dropdown-container">
       <img
+      //if no image from google, then we will use the user's name
         className="profile-image"
         src={profile}
         alt='Profile'
