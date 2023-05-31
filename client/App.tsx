@@ -22,21 +22,10 @@ import './stylesheets/main.scss';
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
       <Navbar />
-      <AskForSuggestion />
       <Dashboard />
-      <Login />
-      <Recommend />
-      <Signup />
-      {/* <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/askforsuggestion" element={<AskForSuggestion />} />
-        <Route path="/recomment" element={<Recommend />} />
-      </Routes> */}
-    </BrowserRouter>
+    </>
   );
 }
 
