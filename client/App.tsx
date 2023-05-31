@@ -16,7 +16,7 @@ import Dashboard from './components/pages/Dashboard';
 import Login from './components/pages/Login';
 import Recommend from './components/pages/Recommend';
 import Signup from './components/pages/Signup';
-// import './App.scss';
+
 import './stylesheets/main.scss';
 
 

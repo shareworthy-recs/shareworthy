@@ -1,7 +1,5 @@
 import React from 'react';
-// import '../styles/LoginStyles.scss';
 import '../../stylesheets/components/Login.scss';
-// import Button from 'react-bootstrap/Button';
 
 const Login = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-// import '../styles/';
+import '../../stylesheets/components/AskForSuggestion.scss';
 
 const AskForSuggestion = () => {
   return (

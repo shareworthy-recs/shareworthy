@@ -1,6 +1,5 @@
 import React from 'react';
-import Button from 'react-bootstrap/Button';
-
+import '../../stylesheets/components/Signup.scss';
 
 const Signup = () => {
   return (
