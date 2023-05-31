@@ -1,19 +1,21 @@
-import express from "express";
+import express from 'express';
+import {Request, Response, NextFunction} from "express";
 const router = express.Router();
 import usersController from '../controllers/usersController';
 
 //signup
-router.post("/signup", usersController.signUp, (req, res) => {
+console.log('test usersRouter')
+router.post("/signup", usersController.signUp, (req: Request, res: Response) => {
   res.status(200).send('new user created');
 });
 
 //login
-router.post("/login", (req, res) => {
+router.post("/login", usersController.login, (req: Request, res: Response) => {
   res.status(200).json(res.locals);
 });
 
 //logout
-router.post("/logout", (req, res) => {
+router.post("/logout", (req: Request, res: Response) => {
   // log out and terminate session
 //   req.session.destroy((err) => {
 //     if (err) {

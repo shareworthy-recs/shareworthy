@@ -19,7 +19,6 @@ app.use(cors());
 
 //user route
 app.use("/api/user", userRouter)
-
 //recommendations route
 app.use("/api/recommendations", reccsRouter);
 
