@@ -1,13 +1,15 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass variables.
+//
+// !default flag: assigns a value only if variable isn’t defined
+// or its value is null. Otherwise, existing value will be used.
 // -----------------------------------------------------------------------------
 
-$testColor: red;
 $primary-text-color: rgb(254, 72, 189);
 $primary-bg-color: rgb(113, 113, 213);
 
 $mainBgColor: rgb(181, 214, 181);
-$textMain: rgb(39, 150, 175);
+
 
 
 /// Regular font family
@@ -19,16 +21,24 @@ $text-font-stack: 'Plus Jakarta Sans','Open Sans', 'Helvetica Neue Light', 'Helv
 $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Monaco', monospace !default;
 
 
-
-
-
 /// Copy text color
 /// @type Color
 $text-color: rgb(34, 34, 34) !default;
 
-/// Main brand color
+/// Main brand color - used for headings
 /// @type Color
-$brand-color: rgb(229, 0, 80) !default;
+$brand-color: rgb(254, 72, 189) !default;
+
+/// background for components
+$bg-color: rgb(113, 113, 213);
+
+/// background for overall body/page
+$page-bg-color: rgb(181, 214, 181);
+
+$button-bg-color: rgb(108, 214, 108);
+$button-accent-color: rgb(5, 126, 5);
+
+
 
 /// Light grey
 /// @type Color
@@ -44,11 +54,11 @@ $dark-grey: rgb(68, 68, 68) !default;
 
 
 
-
-
 /// Container's maximum width
 /// @type Length
 $max-width: 1180px !default;
+
+
 
 
 
@@ -62,8 +72,6 @@ $breakpoints: (
   'medium': 768px,
   'large': 1024px,
 ) !default;
-
-
 
 
 

@@ -4,7 +4,9 @@ import '../../stylesheets/components/Dashboard.scss';
 const Dashboard = () => {
   return (
     <>
-      <div>I hold a bunch of components...I am THE DASHBOARD!</div>
+      <h2>I am THE DASHBOARD!</h2>
+
+      <p>I hold a bunch of components...How you doin</p>
     </>
   );
 };

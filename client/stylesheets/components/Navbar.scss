@@ -5,8 +5,8 @@ nav {
     justify-content: space-between;
     list-style-type: none;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: $primary-text-color;
-    background-color: rgb(113, 113, 213);
+    color: $brand-color;
+    background-color: $bg-color;
 
     #left-nav {
       flex: 1;
@@ -23,7 +23,7 @@ nav {
       align-items: center;
       justify-content: flex-end;
       margin-right: 20px;
-      background-color: rgb(113, 113, 213);
+      background-color: $bg-color;
     }
   }
 

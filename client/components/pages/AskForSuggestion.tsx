@@ -4,7 +4,7 @@ import '../../stylesheets/components/AskForSuggestion.scss';
 const AskForSuggestion = () => {
   return (
     <>
-      <div>Ask for suggestion</div>
+      <h2>Ask for a Suggestion</h2>
     </>
   );
 };

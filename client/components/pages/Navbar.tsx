@@ -10,11 +10,15 @@ const Navbar = () => {
         <div>Shareworthy</div>
       </div>
       <div id="right-nav">
+        
         <div>Ask a Question?</div>
+
         <div>Recommend</div>
+
         <div id="user-pic">
           <img src={lily} />
         </div>
+
       </div>
     </nav>
   );
