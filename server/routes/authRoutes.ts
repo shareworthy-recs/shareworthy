@@ -47,9 +47,10 @@ router.get(
   '/google/callback',
   passport.authenticate('google', {
     successRedirect: CLIENT_URL,
-    failureRedirect: 'http://localhost:8080/login/failed',
-  }), (req,res)=>{
-    console.log('Oauthentication success!')
+    failureRedirect: 'http://localhost:8080/auth/login/failed',
+  }),
+  (req, res) => {
+    console.log('Oauthentication success!');
   }
 );
 export default router;

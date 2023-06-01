@@ -5,6 +5,7 @@ import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
 import cookieSession from 'cookie-session';
+import session from 'express-session';
 import passport from 'passport';
 import {
   initializeGoogleStrategy,
@@ -25,16 +26,16 @@ app.use(cors());
 connectDB();
 
 app.use(
-  cookieSession({
-    name: 'session',
-    keys: ['popping'],
-    maxAge: 24 * 60 * 60 * 100,
+  session({
+    secret: 'shareworthySession',
+    resave: false,
+    saveUninitialized: false,
   })
 );
 app.use(passport.initialize());
 app.use(passport.session());
-// initializeGoogleStrategy();
-// initializeUserSerialization();
+initializeGoogleStrategy();
+initializeUserSerialization();
 
 app.use('/', express.static(path.resolve(__dirname, '../client')));
 

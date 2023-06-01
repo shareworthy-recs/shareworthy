@@ -33,12 +33,12 @@ export const initializeGoogleStrategy = () => {
         clientSecret: process.env.GOOGLE_CLIENT_SECRET || '',
         callbackURL: 'http://localhost:3000/auth/google/callback',
       },
-      (
-        accessToken: any,
-        refreshToken: any,
+      async function (
+        accessToken: string,
+        refreshToken: string,
         profile: GoogleProfile,
         done: GoogleVerifyCallback
-      ) => {
+      ) {
         console.log('IN THE ASYNC FUNCTION');
         const { id, displayName, photos, emails } = profile;
 
@@ -50,8 +50,8 @@ export const initializeGoogleStrategy = () => {
           userId: id,
         };
 
-        console.log(newUser);
-        done(null, newUser);
+        console.log('NEW USER', newUser);
+        return done(null, newUser);
       }
     )
   );
@@ -60,13 +60,13 @@ export const initializeGoogleStrategy = () => {
 export const initializeUserSerialization = () => {
   // req.user => cookie
   passport.serializeUser(function (user, done) {
-    console.log("serializing user:", user);
+    console.log('serializing user:', user);
     done(null, user);
   });
 
   // cookie => req.user
   passport.deserializeUser(function (user: any, done) {
-    console.log("deserializing user:", user);
+    console.log('deserializing user:', user);
     done(null, user);
   });
 };
