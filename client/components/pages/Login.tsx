@@ -37,7 +37,7 @@ const Login = () => {
         </form>
 
         <div id="oauth-box">
-          <div className="oauth-btn">
+          <div className="oauth-button">
             {/* <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"

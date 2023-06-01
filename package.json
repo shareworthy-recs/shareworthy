@@ -52,6 +52,7 @@
     "@types/express-session": "^1.17.7",
     "@types/jest": "^29.5.1",
     "@types/passport": "^1.0.12",
+    "@types/passport-github2": "^1.2.5",
     "@types/passport-google-oauth20": "^2.0.11",
     "@types/react": "^18.0.31",
     "@types/react-dom": "^18.0.11",
