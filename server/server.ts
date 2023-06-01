@@ -4,7 +4,6 @@ import path from 'path';
 import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
-import passport from 'passport';
 
 dotenv.config();
 const app = express();
@@ -14,6 +13,27 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/', express.static(path.resolve(__dirname, '../client')));
 app.use(cors());
+
+// OAuth
+import cookieSession from 'cookie-session';
+import passport from 'passport';
+import passportSetup from './passport';
+import authRoutes from './routes/authRoutes';
+
+console.log('google--->',process.env.GOOGLE_CLIENT_ID);
+
+app.use(
+  cookieSession({
+    name: 'session',
+    keys: ['popping'],
+    maxAge: 24 * 60 * 60 * 100,
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use('/auth', authRoutes);
 
 // catch-all route handler for any requests to an unknown route
 app.use((req: Request, res: Response) =>
@@ -30,8 +50,6 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   const errorObj = Object.assign({}, defaultErr, err);
   return res.status(errorObj.status).json(errorObj.message);
 });
-
-
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

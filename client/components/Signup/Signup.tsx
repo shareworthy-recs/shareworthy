@@ -36,7 +36,7 @@ const Signup = () => {
         </div>
         <div className="oauth-button" onClick={github}>
           <img src={Github} className='icon' />
-          Continue with Google
+          Continue with Github
         </div>
       </div>
       <p>Already on Shareworthy? <a href="/login">Sign in</a></p>  

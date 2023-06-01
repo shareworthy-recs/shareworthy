@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profile from '../../assets/lily.png';
+import profile from '../../assets/lily.png'
 import './DropDownProfileStyles.scss';
 
 const DropDownProfile = () => {
@@ -26,7 +26,7 @@ const DropDownProfile = () => {
           <a href="/settings"className="dropdown-link">
             Settings
           </a>
-          <a href="/logout" className="dropdown-link">
+          <a href="/auth/logout" className="dropdown-link">
             Logout
           </a>
         </div>
