@@ -29,11 +29,15 @@ const usersController = {
       try {
       const {username, password} = req.body;
       //check if username and password are null
+      //if null, throw error for null user/pass
       if(!username || !password) {
         throw new Error('Username and password must be provided.');
       }
+      //find matching username and password in database
       const verifiedUser = await Users.findOne({where: { username: username as string, password: password as string }});
+      //if null, throw error for invalid user/pass
       if(verifiedUser === null) throw new Error('Username/password is invalid.');
+      //store verifieduser in res.locals
       res.locals.message = verifiedUser;
       return next();
       } catch (error) {
