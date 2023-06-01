@@ -4,7 +4,7 @@ const router = express.Router();
 
 //get recommendations for feed or profile or profile's saved reccs
 router.get("/:type", (req, res) => {
-    //conditional statement to differentiate feed or profile reccs or savedReccs
+    //request params to differentiate feedreccs or profilereccs or savedReccs
     const { type } = req.params;
     if (type === "feed") {
       // Logic for feed recommendations
@@ -19,7 +19,7 @@ router.get("/:type", (req, res) => {
       // Handle invalid type parameter
       res.status(400).json({ error: "Invalid type parameter" });
     }
-  res.status(200).json();
+  res.status(200).json(res.locals.reccs);
 });
 
 //post recommendation on feed
