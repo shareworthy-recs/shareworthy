@@ -4,6 +4,15 @@ import path from 'path';
 import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
+import cookieSession from 'cookie-session';
+import passport from 'passport';
+import {
+  initializeGoogleStrategy,
+  initializeUserSerialization,
+} from './passport';
+import authRoutes from './routes/authRoutes';
+
+console.log('google--->', process.env.GOOGLE_CLIENT_ID);
 
 dotenv.config();
 const app = express();
@@ -11,16 +20,9 @@ const PORT = process.env.PORT;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use('/', express.static(path.resolve(__dirname, '../client')));
 app.use(cors());
 
-// OAuth
-import cookieSession from 'cookie-session';
-import passport from 'passport';
-import passportSetup from './passport';
-import authRoutes from './routes/authRoutes';
-
-console.log('google--->',process.env.GOOGLE_CLIENT_ID);
+connectDB();
 
 app.use(
   cookieSession({
@@ -29,9 +31,22 @@ app.use(
     maxAge: 24 * 60 * 60 * 100,
   })
 );
-
 app.use(passport.initialize());
 app.use(passport.session());
+// initializeGoogleStrategy();
+// initializeUserSerialization();
+
+app.use('/', express.static(path.resolve(__dirname, '../client')));
+
+// OAuth
+
+// app.use(
+//   cors({
+//     origin: 'http://localhost:8080',
+//     methods: 'GET, POST, PUT, DELETE',
+//     credentials: true,
+//   })
+// );
 
 app.use('/auth', authRoutes);
 
@@ -54,4 +69,3 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
-connectDB();
