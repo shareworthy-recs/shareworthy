@@ -1,18 +1,39 @@
 import React from 'react';
-import DropDownProfile from './DropDownProfile';
+import { Link } from "react-router-dom";
 import '../../stylesheets/components/Navbar.scss';
+import lily from '../../assets/lily.png';
+import DropDownProfile from './DropDownProfile';
 
 const Navbar = () => {
   return (
     <nav>
-      <div id="left-nav">
-        <div>Shareworthy</div>
+
+      <div id="site-name">
+        <Link to="/">
+          <h1>Shareworthy</h1>
+        </Link>
       </div>
       <div id="right-nav">
-        <div>Ask a Question?</div>
-        <div>Recommend</div>
+
+        <div>
+          <Link to="/ask">
+            Ask a Question?
+          </Link>
+        </div>
+
+        <div>
+          <Link to="/recommend">
+            Recommend
+          </Link>
+        </div>
+
+        <div id="user-pic">
+          <Link to="/profile">
+            <img src={lily} alt="user profile" />
+          </Link>
+        </div>
+
       </div>
-      <DropDownProfile/>
     </nav>
   );
 };
