@@ -2,7 +2,7 @@ import React from 'react';
 import DropDownProfile from './DropDownProfile';
 import './NavbarStyles.scss';
 
-const Navbar = () => {  
+const Navbar = () => {
   return (
     <nav>
       <div id="left-nav">

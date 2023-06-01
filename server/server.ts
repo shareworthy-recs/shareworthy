@@ -51,8 +51,10 @@ app.use('/', express.static(path.resolve(__dirname, '../client')));
 app.use('/auth', authRoutes);
 
 // catch-all route handler for any requests to an unknown route
+// sends them to index, let's react router handle it client side
 app.use((req: Request, res: Response) =>
-  res.status(404).send('Page not found, please check your URL endpoints!')
+  // res.status(404).send('Page not found, please check your URL endpoints!')
+  res.status(404).sendFile(path.join(__dirname, '../build/index.html'))
 );
 
 //express error handler
