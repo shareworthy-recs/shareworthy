@@ -13,8 +13,10 @@ const Dashboard = () => {
 
       <p>I hold a bunch of components...How you doin</p>
 
-      {/* <Login />
+      <Login />
       <Signup />
+
+      {/*
       <AskForSuggestion />
       <Recommend /> */}
     </>
