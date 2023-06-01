@@ -1,6 +1,6 @@
 import React from 'react';
 import DropDownProfile from './DropDownProfile';
-import './NavbarStyles.scss';
+import '../../stylesheets/components/Navbar.scss';
 
 const Navbar = () => {
   return (

@@ -1,5 +1,5 @@
 import React from 'react';
-import './LoginStyles.scss';
+import '../../stylesheets/components/Login.scss';
 import Google from '../../assets/google.png';
 import Github from '../../assets/github.png';
 

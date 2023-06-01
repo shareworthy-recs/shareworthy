@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import profile from '../../assets/lily.png'
-import './DropDownProfileStyles.scss';
+import '../../stylesheets/components/DropDownProfile.scss';
 
 const DropDownProfile = () => {
   const [isOpen, setIsOpen] = useState(false);
