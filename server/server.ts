@@ -9,7 +9,6 @@ import session from 'express-session';
 import passport from 'passport';
 import {
   initializeGoogleStrategy,
-  initializeGithubStrategy,
   initializeUserSerialization,
 } from './passport';
 import authRoutes from './routes/authRoutes';
@@ -36,7 +35,6 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 initializeGoogleStrategy();
-initializeGithubStrategy();
 initializeUserSerialization();
 
 app.use('/', express.static(path.resolve(__dirname, '../client')));
