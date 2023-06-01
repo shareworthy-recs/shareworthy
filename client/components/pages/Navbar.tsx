@@ -27,11 +27,13 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div id="user-pic">
+        <DropDownProfile/>
+
+        {/* <div id="user-pic">
           <Link to="/profile">
             <img src={lily} alt="user profile" />
           </Link>
-        </div>
+        </div> */}
 
       </div>
     </nav>
