@@ -34,18 +34,32 @@ router.get(
   })
 );
 
-//something jake added from his old code
-// router.get(
-//   '/google/callback',
-//   passport.authenticate('google', { failureRedirect: '/' }),
-//   (req: Request, res: Response) => {
-//     res.redirect('localhost:8080');
-//   }
-// );
-
 router.get(
   '/google/callback',
   passport.authenticate('google', {
+    successRedirect: CLIENT_URL,
+    failureRedirect: 'http://localhost:8080/auth/login/failed',
+  }),
+  (req, res) => {
+    console.log('Oauthentication success!');
+  }
+);
+
+// Github Auth Router
+router.get(
+  '/github',
+  (req, res, next) => {
+    console.log('hitting this route!');
+    next();
+  },
+  passport.authenticate('github', {
+    scope: ['profile', 'email'],
+  })
+);
+
+router.get(
+  '/github/callback',
+  passport.authenticate('github', {
     successRedirect: CLIENT_URL,
     failureRedirect: 'http://localhost:8080/auth/login/failed',
   }),

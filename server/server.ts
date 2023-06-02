@@ -4,16 +4,14 @@ import path from 'path';
 import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
-import cookieSession from 'cookie-session';
 import session from 'express-session';
 import passport from 'passport';
 import {
   initializeGoogleStrategy,
+  initializeGithubStrategy,
   initializeUserSerialization,
 } from './passport';
 import authRoutes from './routes/authRoutes';
-
-console.log('google--->', process.env.GOOGLE_CLIENT_ID);
 
 dotenv.config();
 const app = express();
@@ -36,18 +34,9 @@ app.use(passport.initialize());
 app.use(passport.session());
 initializeGoogleStrategy();
 initializeUserSerialization();
+initializeGithubStrategy();
 
 app.use('/', express.static(path.resolve(__dirname, '../client')));
-
-// OAuth
-
-// app.use(
-//   cors({
-//     origin: 'http://localhost:8080',
-//     methods: 'GET, POST, PUT, DELETE',
-//     credentials: true,
-//   })
-// );
 
 app.use('/auth', authRoutes);
 
