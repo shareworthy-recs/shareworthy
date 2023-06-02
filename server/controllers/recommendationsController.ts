@@ -7,32 +7,42 @@ const handleError = (err: { message: string; error: string }) => {
   return { message: { err: message + error } };
 };
 
+
 const reccsController = {
   //get Feed's reccs
-  getFeed: async (req: Request, res: Response, next: NextFunction) => {
+  getFeedReccs: async (req: Request, res: Response, next: NextFunction) => {
     try {
       const feedReccs = await Reccs.findAll();
-      res.locals.reccs = feedReccs;
-    } catch (error) {
-
-    }
+      res.locals.feedReccs = feedReccs;
+      return next();
+    } catch (error) {}
   },
-  getProfile: async (req: Request, res: Response, next: NextFunction) => {
+  //api/recommendations/123
+  getProfileReccs: async (req: Request, res: Response, next: NextFunction) => {
     try {
-      //request query -> to give us the user_id we need
-      const { user_id } = req.query
-      const profileReccs = await Reccs.findAll({where: {created_by: user_id}});
-      res.locals.reccs = profileReccs;
-    } catch (error) {
-
-    }
+      //request params -> to give us the user_id we need
+      const { id } = req.params;
+      const profileReccs = await Reccs.findAll({ where: { created_by: id } });
+      res.locals.profileReccs = profileReccs;
+      return next();
+    } catch (error) {}
   },
-  getSaved: async (req: Request, res: Response, next: NextFunction) => {
+  postRecc: async (req: Request, res: Response, next: NextFunction) => {
     try {
-
-    } catch (error) {
-
-    }
+      //save in reccs model
+      const { question_id, title, location, description, category } = req.body;
+      const { id } = req.params;
+      const postedRecc = await Reccs.create({
+        question_id,
+        title,
+        location,
+        description,
+        category,
+        created_by: id,
+      });
+      res.locals.postedRecc = postedRecc;
+      return next();
+    } catch (error) {}
   },
 };
 

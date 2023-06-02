@@ -8,22 +8,22 @@ router.get("/:type", (req, res) => {
     const { type } = req.params;
     if (type === "feed") {
       // Logic for feed recommendations
-      reccsController.getFeed;
+      reccsController.getFeedReccs;
     } else if (type === "profile") {
       // Logic for profile recommendations
-      reccsController.getProfile;
-    } else if (type === "saved") {
-      // Logic for profile's saved recommendations
-      reccsController.getSaved;
+      // api/recommendations/profile/user_id
+      reccsController.getProfileReccs;
     } else {
       // Handle invalid type parameter
       res.status(400).json({ error: "Invalid type parameter" });
     }
-  res.status(200).json(res.locals.reccs);
+  res.status(200).json(res.locals);
 });
 
+
+
 //post recommendation on feed
-router.post("/", (req, res) => {
+router.post("/:id", reccsController.postRecc, (req, res) => {
   res.status(200).json();
 });
 

@@ -12,7 +12,7 @@ const Recommendations = sequelize.define('recommendations', {
         autoIncrement: true
     },
     created_by: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
         references: {
             model: Users,
@@ -21,7 +21,6 @@ const Recommendations = sequelize.define('recommendations', {
     },
     question: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
             model: Questions,
             key: 'id'
@@ -43,7 +42,8 @@ const Recommendations = sequelize.define('recommendations', {
         type: DataTypes.STRING
     },
     likes: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        defaultValue: 0
     },
     location: {
         type: DataTypes.STRING

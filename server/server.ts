@@ -7,6 +7,8 @@ import { connectDB } from './config/db';
 import userRouter from './routes/usersRouter';
 import reccsRouter from './routes/reccsRouter';
 import questionsRouter from './routes/questionsRouter';
+import profileRouter from './routes/profileRouter';
+import categoriesRouter from "./routes/categoriesRouter";
 
 dotenv.config();
 const app = express();
@@ -21,9 +23,19 @@ app.use(cors());
 app.use("/api/user", userRouter)
 //recommendations route
 app.use("/api/recommendations", reccsRouter);
-
 //questions route
 app.use("/api/questions", questionsRouter);
+//saved recommendations route
+app.use("/api/categories", categoriesRouter);
+
+
+//profile
+app.use('/api/profile', profileRouter)
+
+//homepage
+app.use('/api/homepage')
+
+
 
 // catch-all route handler for any requests to an unknown route
 app.use((req: Request, res: Response) =>
