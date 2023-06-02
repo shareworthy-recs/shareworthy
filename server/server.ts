@@ -8,6 +8,7 @@ import userRouter from './routes/usersRouter';
 import reccsRouter from './routes/reccsRouter';
 import questionsRouter from './routes/questionsRouter';
 import profileRouter from './routes/profileRouter';
+import homePageRouter from "./routes/homePageRouter";
 import categoriesRouter from "./routes/categoriesRouter";
 
 dotenv.config();
@@ -33,7 +34,7 @@ app.use("/api/categories", categoriesRouter);
 app.use('/api/profile', profileRouter)
 
 //homepage
-app.use('/api/homepage')
+app.use('/api/homepage', homePageRouter)
 
 
 
