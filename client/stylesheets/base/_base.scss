@@ -5,7 +5,6 @@
 /** get variables **/
 @use '../abstracts' as *;
 
-
 /**
  * Set up a decent box model on the root element
  */
@@ -13,16 +12,15 @@ html {
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: $page-bg-color;
   color: $text-color;
 }
 
 // holds the contents
-main{
+main {
   padding: 1em;
 }
-
 
 /**
  * Basic styles for links
@@ -32,7 +30,7 @@ a {
   text-decoration: none;
 
   @include on-event {
-    color: $text-color;
+    color: $text-link-event;
     text-decoration: none;
   }
 }
@@ -41,7 +39,7 @@ input {
   /* styles for all inputs */
   padding: 0.6em;
   font-size: 0.8em;
-  margin: .4em;
+  margin: 0.4em;
 }
 
 button {
@@ -55,7 +53,6 @@ button {
   border-radius: 8px;
   width: 80%;
 }
-
 
 /**
  * Make all elements from the DOM inherit from the parent box-sizing

@@ -1,6 +1,5 @@
 @use '../abstracts' as *;
 
-
 #login-popup {
   display: flex;
   flex-direction: column;
@@ -20,6 +19,11 @@
   margin: 0.2em 0;
   display: flex;
 }
+
+.login-button:hover {
+  color: $text-link-event;
+}
+
 .oauth-button {
   display: flex;
   align-items: center;

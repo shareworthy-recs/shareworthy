@@ -3,15 +3,6 @@ import Google from '../../assets/google.png';
 import Github from '../../assets/github.png';
 
 const Signup = () => {
-
-  const google = () => {
-    window.open('http://localhost:3000/auth/google', '_self');
-  };
-
-  const github = () => {
-    window.open('http://localhost:3000/auth/github', '_self');
-  };
-
   return (
     <div>
       <div>Sign Up</div>
@@ -30,16 +21,18 @@ const Signup = () => {
         </div>
       </form>
       <div id="oauth-box">
-        <div className="oauth-btn" onClick={google}>
-          <img src={Google} className='icon' />
+        <div className="oauth-btn">
+          <img src={Google} className="icon" />
           Continue with Google
         </div>
-        <div className="oauth-button" onClick={github}>
-          <img src={Github} className='icon' />
+        <div className="oauth-button">
+          <img src={Github} className="icon" />
           Continue with Github
         </div>
       </div>
-      <p>Already on Shareworthy? <a href="/login">Sign in</a></p>  
+      <p>
+        Already on Shareworthy? <a href="/login">Sign in</a>
+      </p>
     </div>
   );
 };
