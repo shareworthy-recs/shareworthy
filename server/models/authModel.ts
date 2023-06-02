@@ -11,7 +11,7 @@ const AuthUsers = sequelize.define("authUsers", {
       allowNull: false,
       unique: true
   },
-  image:{
+  avatar:{
     type: DataTypes.STRING,
   },
   githubID: {

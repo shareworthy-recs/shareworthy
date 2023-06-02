@@ -1,2 +1,14 @@
 @use '../abstracts' as *;
 
+#recommend-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#signin-submit {
+  background-color: $button-bg-color;
+  border: $button-accent-color 2px solid;
+  padding: 0.8rem;
+  border-radius: 8px;
+}

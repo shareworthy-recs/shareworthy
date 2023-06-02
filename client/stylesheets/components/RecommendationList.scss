@@ -1,0 +1,22 @@
+@use '../abstracts' as *;
+
+#recs-cards-main-container {
+  display: flex;
+  flex-direction: column;
+  border: black;
+}
+#recs-cards-container-1 {
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    flex: 1;
+  }
+}
+
+#recs-cards-container-2 {
+  display: flex;
+  justify-content: space-evenly;
+  div {
+    flex: 1;
+  }
+}

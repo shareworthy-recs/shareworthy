@@ -1,2 +1,20 @@
 @use '../abstracts/' as *;
 
+#suggestion-box {
+  width: 50%;
+}
+#suggestion-submit {
+  width: 50%;
+  background-color: $button-bg-color;
+  border: $button-accent-color 2px solid;
+  padding: 0.8rem;
+  border-radius: 8px;
+  text-align: center;
+}
+
+#suggestion-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  justify-content: center;
+}
