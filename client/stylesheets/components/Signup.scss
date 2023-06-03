@@ -1,0 +1,9 @@
+@use '../abstracts' as *;
+
+#signup-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: $bg-color;
+}

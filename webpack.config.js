@@ -7,6 +7,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
+    publicPath: '/',
   },
   target: 'web',
   devServer: {
@@ -14,7 +15,7 @@ module.exports = {
     host: 'localhost',
     open: true,
     hot: true,
-    liveReload: true,
+    historyApiFallback: true,
     proxy: {
       '/': {
         target: 'http://localhost:3000',
@@ -60,6 +61,18 @@ module.exports = {
         options: {
           limit: 8192,
         },
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'images',
+            },
+          },
+        ],
       },
     ],
   },

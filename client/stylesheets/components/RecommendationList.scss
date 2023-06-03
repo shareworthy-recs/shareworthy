@@ -1,0 +1,42 @@
+@use '../abstracts' as *;
+
+#recs-main-container {
+  display: flex;
+  flex-direction: column;
+  border: black;
+  gap: 20px;
+}
+
+#recs-cards-container-1 {
+  display: flex;
+  gap: 0.8rem;
+  div {
+    flex: 1;
+  }
+}
+
+#recs-cards-container-2 {
+  display: flex;
+  gap: 0.8rem;
+  div {
+    flex: 1;
+  }
+}
+
+.recs-cards {
+  display: flex;
+  flex-direction: column;
+  background-color: $bg-color;
+  padding: 0.8rem;
+  border-radius: 20px;
+  gap: 0.8rem;
+  min-height: 15rem;
+  border: 5px rgb(64, 94, 177) solid;
+}
+
+.rec-answer {
+  background-color: $primary-text-color;
+  padding: 0.8rem;
+  text-align: center;
+  border-radius: 10px;
+}
