@@ -4,7 +4,6 @@ import path from 'path';
 import { NextFunction, Response, Request } from 'express';
 import cors from 'cors';
 import { connectDB } from './config/db';
-import cookieSession from 'cookie-session';
 import session from 'express-session';
 import passport from 'passport';
 import {
@@ -14,6 +13,12 @@ import {
 import authRoutes from './routes/authRoutes';
 
 console.log('google--->', process.env.GOOGLE_CLIENT_ID);
+import userRouter from './routes/usersRouter';
+import reccsRouter from './routes/reccsRouter';
+import questionsRouter from './routes/questionsRouter';
+import profileRouter from './routes/profileRouter';
+import homePageRouter from './routes/homePageRouter';
+import categoriesRouter from './routes/categoriesRouter';
 
 dotenv.config();
 const app = express();
@@ -50,6 +55,20 @@ app.use('/', express.static(path.resolve(__dirname, '../client')));
 // );
 
 app.use('/auth', authRoutes);
+//user route
+app.use('/api/user', userRouter);
+//recommendations route
+app.use('/api/recommendations', reccsRouter);
+//questions route
+app.use('/api/questions', questionsRouter);
+//saved recommendations route
+app.use('/api/categories', categoriesRouter);
+
+//profile
+app.use('/api/profile', profileRouter);
+
+//homepage
+app.use('/api/homepage', homePageRouter);
 
 // catch-all route handler for any requests to an unknown route
 // sends them to index, let's react router handle it client side

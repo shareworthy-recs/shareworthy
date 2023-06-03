@@ -9,19 +9,20 @@ const Recommendations = sequelize.define('recommendations', {
         type: DataTypes.INTEGER,
         allowNull: false,
         primaryKey: true,
-        autoIncrement: true
+        unique: true,
+        autoIncrement: true,
     },
     created_by: {
-        type: DataTypes.STRING,
+        type: DataTypes.INTEGER,
         allowNull: false,
+        unique: true,
         references: {
             model: Users,
             key: 'id'
         }
     },
-    question: {
+    question_id: {
         type: DataTypes.INTEGER,
-        allowNull: false,
         references: {
             model: Questions,
             key: 'id'
@@ -43,12 +44,16 @@ const Recommendations = sequelize.define('recommendations', {
         type: DataTypes.STRING
     },
     likes: {
-        type: DataTypes.INTEGER
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+        allowNull: true,
     },
     location: {
         type: DataTypes.STRING
     }
 });
+
+Recommendations.belongsTo(Questions, {foreignKey: 'id'});
 
 Recommendations.sync().then(() => {
     console.log('Recommendations synced successfully');

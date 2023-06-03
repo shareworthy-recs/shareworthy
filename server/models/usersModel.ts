@@ -26,7 +26,7 @@ const Users = sequelize.define("users", {
         type: DataTypes.STRING
     },
     friends: {
-        type: DataTypes.ARRAY
+        type: DataTypes.ARRAY(DataTypes.INTEGER)
     },
     credibility_score: {
         type: DataTypes.INTEGER
