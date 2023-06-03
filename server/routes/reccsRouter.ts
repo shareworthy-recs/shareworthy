@@ -24,7 +24,8 @@ router.get("/:type", (req, res) => {
 
 //post recommendation on feed
 router.post("/:id", reccsController.postRecc, (req, res) => {
-  res.status(200).json();
+  console.log('postRecc', res.locals.postedRecc)
+  res.status(200).json(res.locals.postedRecc);
 });
 
 //update like count on recommendation

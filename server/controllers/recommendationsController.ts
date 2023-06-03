@@ -31,7 +31,9 @@ const reccsController = {
     try {
       //save in reccs model
       const { question_id, title, location, description, category } = req.body;
+      console.log('body', req.body)
       const { id } = req.params;
+      console.log('id: ', id);
       const postedRecc = await Reccs.create({
         question_id,
         title,
@@ -40,6 +42,7 @@ const reccsController = {
         category,
         created_by: id,
       });
+      console.log('posted: ', postedRecc)
       res.locals.postedRecc = postedRecc;
       return next();
     } catch (error) {}

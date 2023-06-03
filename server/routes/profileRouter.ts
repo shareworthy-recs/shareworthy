@@ -4,7 +4,7 @@ const router = express.Router();
 
 import reccsController from "../controllers/recommendationsController";
 import questionsController from "../controllers/questionsController";
-import savedReccsController from "../controllers/savedReccsController";
+// import savedReccsController from "../controllers/savedReccsController";
 
 //getProfile
 //get user's questions
@@ -14,7 +14,7 @@ router.get(
   "/:id",
   questionsController.getProfileQs,
   reccsController.getProfileReccs,
-  savedReccsController.getSavedReccs,
+  // savedReccsController.getSavedReccs,
   (req: Request, res: Response) => {
     res.status(200).json(res.locals);
   }

@@ -23,7 +23,7 @@ router.get("/:type", (req, res) => {
 
 //post question for feed/suggestion page
 router.post("/:id", questionsController.postQuestion, (req, res) => {
-  res.status(200).json();
+  res.status(200).json(res.locals.postedQuestion);
 });
 
 export default router;

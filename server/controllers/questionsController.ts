@@ -35,6 +35,7 @@ const questionsController = {
       const { question , category } = req.body;
       const { id } = req.params;
       const postedQuestion = await Questions.create({ question, category, created_by: id });
+      console.log('posted question');
       res.locals.postedQuestion = postedQuestion;
       return next();
     } catch (error) {
