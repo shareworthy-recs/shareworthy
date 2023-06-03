@@ -22,7 +22,7 @@ const Navbar = () => {
         </div>
 
         <div>
-          <Link to="/landing">Landing</Link>
+          <Link to="/landing">_</Link>
         </div>
         <DropDownProfile />
       </div>

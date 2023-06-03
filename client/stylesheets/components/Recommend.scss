@@ -1,14 +1,31 @@
 @use '../abstracts' as *;
 
+#recommend {
+  h2 {
+    text-align: center;
+  }
+}
+
 #recommend-form {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  input {
+    width: 100%;
+  }
+  select {
+    width: 100%;
+  }
+  padding: 1rem 10rem;
 }
 
 #signin-submit {
   background-color: $button-bg-color;
   border: $button-accent-color 2px solid;
-  padding: 0.8rem;
   border-radius: 8px;
+  width: 100%;
+  padding: 0.6em;
+  font-size: 0.8em;
+  margin: 0.4em;
+  text-align: center;
 }

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import profile from '../../assets/lily.png'
+import profile from '../../assets/gumby.jpg';
 import '../../stylesheets/components/DropDownProfile.scss';
 
 const DropDownProfile = () => {
@@ -12,18 +12,18 @@ const DropDownProfile = () => {
   return (
     <div className="dropdown-container">
       <img
-      //if no image from google, then we will use the user's name
+        src="../../assets/lily.png"
         className="profile-image"
-        src={profile}
-        alt='Profile'
+        alt="profile image"
         onClick={toggleDropdown}
       />
+
       {isOpen && (
         <div className="dropdown-box">
           <a href="/profile" className="dropdown-link">
             Profile
           </a>
-          <a href="/settings"className="dropdown-link">
+          <a href="/settings" className="dropdown-link">
             Settings
           </a>
           <a href="/auth/logout" className="dropdown-link">
