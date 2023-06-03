@@ -6,7 +6,18 @@ const Categories = sequelize.define("categories", {
         type: DataTypes.STRING,
         allowNull: false,
         primaryKey: true
-    }
+    },
+ createdAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: DataTypes.NOW,
+        field: 'createdat', // Specify the column name as 'createdat' in the database
+    },
+    updatedAt: {
+        type: DataTypes.DATE,
+        allowNull: true,
+        defaultValue: DataTypes.NOW,
+    },
 });
 
 Categories.sync().then(() => {
