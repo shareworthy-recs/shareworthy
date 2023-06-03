@@ -63,10 +63,8 @@ app.use('/api/recommendations', reccsRouter);
 app.use('/api/questions', questionsRouter);
 //saved recommendations route
 app.use('/api/categories', categoriesRouter);
-
 //profile
 app.use('/api/profile', profileRouter);
-
 //homepage
 app.use('/api/homepage', homePageRouter);
 

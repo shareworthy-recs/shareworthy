@@ -1,26 +1,73 @@
 import React from 'react';
+import { useState } from 'react';
 import Google from '../../assets/google.png';
 import Github from '../../assets/github.png';
 import '../../stylesheets/components/Signup.scss';
 
 const Signup = () => {
+  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const signUpUser = async () => {
+    fetch('/api/user/signup', {
+      //full_name, email, username, password
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        full_name: name,
+        username,
+        email,
+        password,
+      }),
+    });
+  };
+
   return (
     <div id="signup-box">
       <h2>Sign Up</h2>
       <form>
         <div>
-          <input type="text" placeholder="Enter your name" />
+          <input
+            type="text"
+            placeholder="Enter your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
         </div>
         <div>
-          <input type="email" placeholder="Enter your email" />
+          <input
+            type="text"
+            placeholder="Enter your username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
         </div>
         <div>
-          <input type="password" placeholder="Enter your password" />
+          <input
+            type="email"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+        </div>
+        <div>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
       </form>
       <div id="oauth-box">
         <div className="oauth-button">
-          <a href="/">Join</a>
+          <a href="/" onClick={signUpUser}>
+            Join
+          </a>
         </div>
       </div>
       <div id="oauth-box">

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import profile from '../../assets/gumby.jpg';
 import '../../stylesheets/components/DropDownProfile.scss';
 
@@ -20,16 +21,16 @@ const DropDownProfile = () => {
 
       {isOpen && (
         <div className="dropdown-box">
-          <a href="/profile" className="dropdown-link">
-            Profile
-          </a>
-          <a href="/settings" className="dropdown-link">
-            Settings
-          </a>
-          <a href="/auth/logout" className="dropdown-link">
-            Logout
-          </a>
-        </div>
+        <Link to="/profile" className="dropdown-link">
+          Profile
+        </Link>
+        <Link to="/settings" className="dropdown-link">
+          Settings
+        </Link>
+        <Link to="/auth/logout" className="dropdown-link">
+          Logout
+        </Link>
+      </div>
       )}
     </div>
   );

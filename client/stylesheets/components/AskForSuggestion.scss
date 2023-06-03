@@ -1,10 +1,6 @@
 @use '../abstracts/' as *;
 
-#suggestion-box {
-  width: 50%;
-}
 #suggestion-submit {
-  width: 50%;
   background-color: $button-bg-color;
   border: $button-accent-color 2px solid;
   padding: 0.8rem;
@@ -15,9 +11,15 @@
 #suggestion-form {
   display: flex;
   flex-direction: column;
-  width: 50%;
   justify-content: center;
+  width: 50%;
   button {
     width: 100%;
   }
+}
+
+#ask-for-suggestion-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

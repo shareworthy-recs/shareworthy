@@ -14,13 +14,13 @@ const AskForSuggestion = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(suggestionPost),
     }).then(() => {
-      console.log('submitted suggestion post')
+      console.log('submitted suggestion post');
     });
   };
 
   return (
     <>
-      <div>
+      <div id="ask-for-suggestion-container">
         <h2>Ask for a Suggestion</h2>
         <form id="suggestion-form" onSubmit={handleSubmit}>
           <label>What are you looking for?</label>

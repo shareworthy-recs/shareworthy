@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import '../../stylesheets/components/Login.scss';
 import Google from '../../assets/google.png';
 import Github from '../../assets/github.png';
@@ -8,10 +9,33 @@ const Login = () => {
     window.open('http://localhost:3000/auth/github', '_self');
   };
 
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+
+  const loginUser = async () => {
+    fetch('/api/user/login', {
+      //full_name, email, username, password
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json',
+      },
+      body: JSON.stringify({
+        username,
+        password,
+      }),
+    });
+  };
+
   return (
     <>
       <div id="login-popup">
         <h2>Log In</h2>
+        <img
+          src="../../assets/sw-twofer.png"
+          className="twofer login-img"
+          alt="twofer"
+        />
+
         <form id="local-login">
           <input
             autoComplete="off"
@@ -31,15 +55,11 @@ const Login = () => {
             // value={password}
             required={true}
           />
-          <button
-            className="login-button"
-            type="submit"
-            onClick={() => {
-              window.location.href = 'http://localhost:8080';
-            }}
-          >
-            Login
-          </button>
+          <a href="/" className="button center">
+            <div className="login-button" onClick={loginUser}>
+              Login
+            </div>
+          </a>
         </form>
 
         <div id="oauth-box">
